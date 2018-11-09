@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Input, Form, FormGroup } from 'reactstrap';
 
 class SearchBar extends Component {
   constructor(props) {
@@ -9,13 +10,17 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <div>
-        <input
-          value={this.state.term}
-          onChange={event => {
-            this.setState({ term: event.target.value });
-          }}
-        />
+      <div className="col-md-10">
+        <Form className="search-bar">
+          <FormGroup>
+            <Input
+              value={this.state.term}
+              onChange={event => {
+                this.setState({ term: event.target.value });
+              }}
+            />
+          </FormGroup>
+        </Form>
       </div>
     );
   }

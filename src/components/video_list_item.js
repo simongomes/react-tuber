@@ -9,7 +9,10 @@ const VideoListItem = ({ video, onVideoSelect }) => {
   };
 
   return (
-    <ListGroupItem onClick={() => onVideoSelect(video)}>
+    <ListGroupItem
+      className="video-list-item"
+      onClick={() => onVideoSelect(video)}
+    >
       <Media className="video-list">
         <Media left href="#">
           <img className="media-object" src={videoData.image} alt="" />
