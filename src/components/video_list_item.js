@@ -19,7 +19,6 @@ const VideoListItem = ({ video, onVideoSelect }) => {
         </Media>
         <Media body>
           <Media heading>{videoData.title}</Media>
-          {videoData.description}
         </Media>
       </Media>
     </ListGroupItem>

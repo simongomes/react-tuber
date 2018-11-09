@@ -15,7 +15,12 @@ class App extends Component {
       videos: [],
       selectedVideo: null
     };
-    YTSearch({ key: API_KEY, term: 'graphQL' }, videos => {
+
+    this.videSearch('graphQL');
+  }
+
+  videSearch(term) {
+    YTSearch({ key: API_KEY, term }, videos => {
       this.setState({
         videos,
         selectedVideo: videos[0]
@@ -27,12 +32,11 @@ class App extends Component {
     return (
       <div className="container">
         <div className="row justify-content-md-center">
-          <SearchBar />
+          <SearchBar onSearchTermChange={term => this.videSearch(term)} />
         </div>
         <div className="row justify-content-md-center">
           <VideoDetail video={this.state.selectedVideo} />
-        </div>
-        <div className="row justify-content-md-center">
+
           <VideoList
             onVideoSelect={selectedVideo => this.setState({ selectedVideo })}
             videos={this.state.videos}

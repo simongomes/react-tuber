@@ -21,3 +21,6 @@
 .video-list-item .media-body {
   margin-left: 10px;
 }
+.video-list-item .media-heading {
+  font-size: 1em;
+}
